@@ -72,9 +72,7 @@ const Home = () => {
           <Badge className="mb-4 bg-gradient-to-r from-purple-600 to-pink-600 text-white border-0">
             Образование будущего
           </Badge>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent leading-tight">
-            Учись без границ
-          </h1>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent leading-tight">ИнфоРесурс</h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
             Получай знания от лучших экспертов мира. Развивайся в удобном темпе и достигай целей.
           </p>
