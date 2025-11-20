@@ -58,7 +58,7 @@ const Home = () => {
             <Link to="/news" className="text-gray-700 hover:text-purple-600 font-medium transition-colors">
               Новости
             </Link>
-            <Link to="/admin">
+            <Link to="/admin/login">
               <Button variant="ghost" size="sm">
                 <Icon name="Settings" size={18} />
               </Button>

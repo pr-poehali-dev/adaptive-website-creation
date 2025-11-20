@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,11 +8,28 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import Icon from "@/components/ui/icon";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 
 const Admin = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const isAuthenticated = sessionStorage.getItem("admin_authenticated");
+    if (!isAuthenticated) {
+      navigate("/admin/login");
+    }
+  }, [navigate]);
+
+  const handleLogout = () => {
+    sessionStorage.removeItem("admin_authenticated");
+    toast({
+      title: "Выход выполнен",
+      description: "Вы успешно вышли из системы",
+    });
+    navigate("/admin/login");
+  };
   const [newsForm, setNewsForm] = useState({
     title: "",
     description: "",
@@ -75,6 +92,10 @@ const Admin = () => {
                 На сайт
               </Button>
             </Link>
+            <Button variant="outline" size="sm" onClick={handleLogout}>
+              <Icon name="LogOut" size={18} />
+              Выйти
+            </Button>
           </div>
         </div>
       </nav>

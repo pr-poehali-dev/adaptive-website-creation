@@ -92,7 +92,7 @@ const News = () => {
             <Link to="/news" className="text-purple-600 font-medium">
               Новости
             </Link>
-            <Link to="/admin">
+            <Link to="/admin/login">
               <Button variant="ghost" size="sm">
                 <Icon name="Settings" size={18} />
               </Button>
